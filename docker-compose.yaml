@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:16.2
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: contact_db
+# DB_SOURCE=postgresql://root:secret@localhost:5432/contact_db?sslmode=disable
+volumes:
+  _data:
