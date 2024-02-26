@@ -14,7 +14,6 @@ func main() {
 	})
 
 	r.GET("/hello", func(c routes.IContext) {
-
 		fmt.Println(c.GetSession())
 		name := c.Query("name")
 		c.JSON(200, "Hello, World! "+name)
